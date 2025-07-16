@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import requests, os
 
 app = FastAPI()
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -14,5 +15,6 @@ NEWSAPI_KEY = os.getenv("NEWSAPI_KEY")
 
 @app.get("/news")
 def get_news():
-    url = url = f"https://newsapi.org/v2/top-headlines?q=politik&language=de&apiKey=9e78d47e0a434b178bcfdbe2c30daca8"
-    return requests.get(url).json()
+    url = f"https://newsapi.org/v2/top-headlines?q=politik&language=de&apiKey={NEWSAPI_KEY}"
+    response = requests.get(url)
+    return response.json()
