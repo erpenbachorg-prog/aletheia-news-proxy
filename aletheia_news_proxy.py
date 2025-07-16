@@ -10,7 +10,7 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-NEWSAPI_KEY = os.getenv(9e78d47e0a434b178bcfdbe2c30daca8)
+NEWSAPI_KEY = os.getenv("NEWSAPI_KEY")
 
 @app.get("/news")
 def get_news():
