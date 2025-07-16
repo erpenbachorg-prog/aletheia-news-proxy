@@ -14,5 +14,5 @@ NEWSAPI_KEY = os.getenv("NEWSAPI_KEY")
 
 @app.get("/news")
 def get_news():
-    url = f"https://newsapi.org/v2/top-headlines?country=de&category=politics&apiKey={NEWSAPI_KEY}"
+    url = url = f"https://newsapi.org/v2/top-headlines?q=politik&language=de&apiKey=9e78d47e0a434b178bcfdbe2c30daca8"
     return requests.get(url).json()
